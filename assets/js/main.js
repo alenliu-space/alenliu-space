@@ -127,16 +127,16 @@ applyLang();
 
 /* ================= Mobile Menu ================= */
 const menuBtn = document.getElementById("menuToggle");
-const menuPanel = document.getElementById("mobileMenu");
+const overlay = document.querySelector(".menu-overlay");
 
 if(menuBtn){
   menuBtn.onclick = ()=>{
-    
-    if(document.body.classList.contains("menu-open")){
-      document.body.classList.remove("menu-open");
-    } else {
-      document.body.classList.add("menu-open");
-    }
+    document.body.classList.toggle("menu-open");
+  };
+}
 
+if(overlay){
+  overlay.onclick = ()=>{
+    document.body.classList.remove("menu-open");
   };
 }
