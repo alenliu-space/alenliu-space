@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="light">
@@ -15,27 +18,42 @@
 <header class="site-header">
   <div class="container header-inner">
 
-    <nav class="nav">
+    <div class="mobile-left">
+      <span class="logo-text">Alen Liu</span>
+    </div>
 
+    <nav class="nav desktop-nav">
       <a class="pill" href="https://blog.alenliu.space" target="_blank" data-i18n="navBlog">Blog</a>
-
       <a class="pill" href="https://gallery.alenliu.space" target="_blank" data-i18n="navGallery">Gallery</a>
-
       <a class="pill"
          href="https://www.linkedin.com/in/%E5%9D%9A%E9%91%AB-%E5%BB%96-965299398"
          target="_blank"
-         data-i18n="navLinkedin">
-         LinkedIn
-      </a>
-
+         data-i18n="navLinkedin">LinkedIn</a>
       <a class="pill" href="mailto:alenliu168@gmail.com" data-i18n="navContact">Contact</a>
 
       <button id="lang-toggle" class="lang-btn">ZH</button>
       <button id="theme-toggle" class="theme-btn">🌗</button>
     </nav>
 
+    <!-- MOBILE MENU BUTTON -->
+    <button class="mobile-menu-btn" id="menuToggle">☰</button>
+
   </div>
+
+  <!-- MOBILE MENU PANEL -->
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="https://blog.alenliu.space" target="_blank" data-i18n="navBlog">Blog</a>
+    <a href="https://gallery.alenliu.space" target="_blank" data-i18n="navGallery">Gallery</a>
+    <a href="https://www.linkedin.com/in/%E5%9D%9A%E9%91%AB-%E5%BB%96-965299398"
+       target="_blank"
+       data-i18n="navLinkedin">LinkedIn</a>
+    <a href="mailto:alenliu168@gmail.com" data-i18n="navContact">Contact</a>
+
+  </div>
+
 </header>
+
 
 
 <main>

@@ -123,3 +123,14 @@ document.getElementById("theme-toggle")
 .onclick=()=>document.body.classList.toggle("dark");
 
 applyLang();
+
+const menuBtn = document.getElementById("menuToggle");
+const menuPanel = document.getElementById("mobileMenu");
+
+menuBtn.onclick = ()=>{
+  if(menuPanel.style.display==="block"){
+    menuPanel.style.display="none";
+  } else {
+    menuPanel.style.display="block";
+  }
+};
