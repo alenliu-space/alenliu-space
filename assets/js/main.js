@@ -124,13 +124,13 @@ document.getElementById("theme-toggle")
 
 applyLang();
 
+/* Mobile menu */
 const menuBtn = document.getElementById("menuToggle");
 const menuPanel = document.getElementById("mobileMenu");
 
-menuBtn.onclick = ()=>{
-  if(menuPanel.style.display==="block"){
-    menuPanel.style.display="none";
-  } else {
-    menuPanel.style.display="block";
-  }
-};
+if(menuBtn){
+  menuBtn.onclick = ()=>{
+    menuPanel.style.display =
+      menuPanel.style.display==="block" ? "none" : "block";
+  };
+}

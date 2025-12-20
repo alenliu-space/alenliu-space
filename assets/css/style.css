@@ -201,35 +201,15 @@ body.dark .exp-block{background:#181818;border-color:#444;}
 body.dark .site-header{background:rgba(0,0,0,.85);}
 body.dark .hero-description{color:#ccc;}
 
-/* Hide hamburger on desktop */
+
+/* ===== Mobile Menu ===== */
+
 .mobile-menu-btn{
   display:none;
 }
 
-/* Mobile menu panel */
 .mobile-menu{
   display:none;
-  position:fixed;
-  top:88px;
-  right:0;
-  width:100%;
-  background:white;
-  border-top:1px solid #ddd;
-  padding:18px;
-  z-index:100;
-}
-
-.mobile-menu a{
-  display:block;
-  padding:14px 6px;
-  font-size:18px;
-  color:#111;
-  text-decoration:none;
-  border-bottom:1px solid #eee;
-}
-
-.mobile-menu a:last-child{
-  border-bottom:none;
 }
 
 /* Mobile Responsive */
@@ -241,15 +221,43 @@ body.dark .hero-description{color:#ccc;}
 
   .mobile-menu-btn{
     display:block;
+    position:absolute;
+    right:18px;
+    top:22px;
     border:1px solid #ccc;
     background:white;
     border-radius:22px;
     padding:8px 16px;
     font-size:18px;
+    z-index:100;
   }
 
   .logo-text{
     font-size:18px;
     font-weight:600;
+  }
+
+  .mobile-menu{
+    position:fixed;
+    top:88px;
+    right:0;
+    width:100%;
+    background:white;
+    border-top:1px solid #ddd;
+    padding:18px;
+    z-index:99;
+  }
+
+  .mobile-menu a{
+    display:block;
+    padding:14px 6px;
+    font-size:18px;
+    color:#111;
+    text-decoration:none;
+    border-bottom:1px solid #eee;
+  }
+
+  .mobile-menu a:last-child{
+    border-bottom:none;
   }
 }
