@@ -124,13 +124,19 @@ document.getElementById("theme-toggle")
 
 applyLang();
 
-/* Mobile menu */
+
+/* ================= Mobile Menu ================= */
 const menuBtn = document.getElementById("menuToggle");
 const menuPanel = document.getElementById("mobileMenu");
 
 if(menuBtn){
   menuBtn.onclick = ()=>{
-    menuPanel.style.display =
-      menuPanel.style.display==="block" ? "none" : "block";
+    
+    if(document.body.classList.contains("menu-open")){
+      document.body.classList.remove("menu-open");
+    } else {
+      document.body.classList.add("menu-open");
+    }
+
   };
 }
