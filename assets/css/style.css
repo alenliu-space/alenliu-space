@@ -218,7 +218,7 @@ body.dark .hero-description{color:#ccc;}
   .hero{
     padding-top:170px;
   }
-  
+
   .desktop-nav{
     display:none;
   }
@@ -237,9 +237,9 @@ body.dark .hero-description{color:#ccc;}
   }
 
   .logo-text{
-    font-size:18px;
-    font-weight:600;
-  }
+  display:none;
+  } 
+
 
   .mobile-menu{
     position:fixed;
