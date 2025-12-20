@@ -3,7 +3,7 @@ body{
   font-family:Inter;
   background:#fff;
   color:#111;
-  transition:.4s ease-in-out;
+  transition:.35s ease;
 }
 
 .container{
@@ -12,19 +12,17 @@ body{
   padding:0 24px;
 }
 
-
-/* ================= HEADER GLASS ================= */
+/* Header */
 .site-header{
   position:fixed;
   top:0;
   width:100%;
   height:88px;
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(22px);
-  -webkit-backdrop-filter:blur(22px);
-  border-bottom:1px solid rgba(255,255,255,.35);
-  box-shadow:0 8px 24px rgba(0,0,0,.08);
-  z-index:50;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid #eee;
+  z-index:100;
 }
 
 .header-inner{
@@ -44,43 +42,36 @@ body{
 .pill{
   padding:8px 18px;
   border-radius:24px;
-  border:1px solid rgba(255,255,255,.35);
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
+  border:1px solid #ddd;
+  background:white;
   text-decoration:none;
   color:#111;
   transition:.35s cubic-bezier(.4,.1,.2,1);
 }
 
 .pill:hover{
-  box-shadow:0 22px 50px rgba(0,0,0,.20);
+  box-shadow:0 18px 42px rgba(0,0,0,.12);
   transform:translateY(-2px);
 }
 
 .lang-btn,.theme-btn{
-  border:1px solid rgba(255,255,255,.4);
+  border:1px solid #ccc;
   padding:6px 14px;
   border-radius:22px;
-  background:rgba(255,255,255,.6);
+  background:white;
   cursor:pointer;
 }
 
-.logo-text{display:none}
-
-
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 .hero{
-  padding-top:150px;
+  padding-top:140px;
   padding-bottom:30px;
-  transition:.3s;
 }
 
 .hero-avatar{
   width:95px;
   border-radius:50%;
   margin-bottom:14px;
-  box-shadow:0 18px 40px rgba(0,0,0,.22);
 }
 
 .hero-name{
@@ -102,39 +93,55 @@ body{
   margin-top:10px;
 }
 
-
 /* Sections */
-.section{padding:45px 0;}
-.section-title{margin-bottom:26px;font-size:19px;font-weight:700}
+.section{
+  padding:45px 0;
+}
 
+.section-title{
+  margin-bottom:26px;
+  font-size:19px;
+  font-weight:700;
+}
 
-/* CARDS / EXPERIENCE */
-.grid-2,.experience-grid{
+/* GRID */
+.grid-2{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:22px;
 }
 
-.card,.exp-block{
-  border:1px solid rgba(255,255,255,.32);
+.card,
+.exp-block{
+  border:1px solid #ddd;
   border-radius:16px;
   padding:18px 20px;
-  background:rgba(255,255,255,.66);
-  backdrop-filter:blur(14px);
-  transition:.35s;
+  background:white;
+  transition:.35s cubic-bezier(.4,.1,.2,1);
 }
 
-.card:hover,.exp-block:hover{
+.card:hover,
+.exp-block:hover{
   box-shadow:0 26px 60px rgba(0,0,0,.12);
   transform:translateY(-3px);
 }
 
+.experience-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
 
 /* Social */
-.social-row{display:flex;gap:14px;flex-wrap:wrap;}
-.social-pill{font-size:14px;}
-.no-link{cursor:default}
+.social-row{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
 
+.no-link{
+  cursor:default;
+}
 
 /* Footer */
 .site-footer{
@@ -144,41 +151,52 @@ body{
   color:#777;
 }
 
+/* Animation */
+.fade-in{
+  opacity:0;
+  transform:translateY(12px);
+  animation:appear .8s cubic-bezier(.25,.1,.25,1) forwards;
+}
 
-/* Fade animation */
-.fade-in{opacity:0;transform:translateY(12px);animation:appear .8s ease forwards;}
-@keyframes appear{to{opacity:1;transform:translateY(0);}}
+@keyframes appear{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
-
-/* ================= DARK MODE ================= */
+/* DARK MODE */
 body.dark{
-  background:#0c0c0c;
+  background:#0f0f0f;
   color:#eee;
+}
+
+body.dark .card,
+body.dark .exp-block{
+  background:#181818;
+  border-color:#444;
 }
 
 body.dark .site-header{
-  background:rgba(10,10,10,.6);
-  border-color:rgba(255,255,255,.15);
+  background:rgba(0,0,0,.85);
 }
 
-body.dark .pill,
-body.dark .card,
-body.dark .exp-block{
-  background:rgba(22,22,22,.65);
-  border:1px solid rgba(255,255,255,.18);
-  color:#eee;
-}
-
-body.dark .hero-description{color:#ccc}
+body.dark .hero-description{color:#ccc;}
 
 
-/* ================= MOBILE MENU ================= */
-
+/* ===== MOBILE MENU ===== */
 .mobile-menu-btn{
   display:none;
 }
 
+.mobile-menu{
+  display:none;
+}
+
+/* Mobile */
 @media(max-width:768px){
+
+  .hero{padding-top:170px;}
 
   .desktop-nav{display:none;}
 
@@ -187,39 +205,56 @@ body.dark .hero-description{color:#ccc}
     position:absolute;
     right:18px;
     top:22px;
-    border:1px solid rgba(255,255,255,.4);
-    background:rgba(255,255,255,.65);
+    border:1px solid #ccc;
+    background:white;
     border-radius:22px;
     padding:8px 16px;
     font-size:18px;
-    z-index:100;
-    backdrop-filter:blur(20px);
   }
 
-  /* 右侧抽屉菜单 */
-  .mobile-menu{
+  /* Overlay */
+  .menu-overlay{
     position:fixed;
-    top:88px;
-    right:-100%;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(12px);
+    opacity:0;
+    pointer-events:none;
+    transition:.35s;
+    z-index:90;
+  }
+
+  body.menu-open .menu-overlay{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  /* Drawer menu */
+  .mobile-menu{
+    display:block;
+    position:fixed;
+    top:0;
+    right:0;
     width:78%;
-    height:calc(100% - 88px);
-    background:rgba(255,255,255,.75);
-    backdrop-filter:blur(22px);
-    border-left:1px solid rgba(255,255,255,.35);
-    box-shadow:-12px 0 40px rgba(0,0,0,.15);
-    padding:24px;
+    max-width:360px;
+    height:100vh;
+    background:white;
+    border-left:1px solid #ddd;
+    padding:26px;
+    box-shadow:-8px 0 40px rgba(0,0,0,.18);
+    transform:translateX(100%);
     transition:.35s cubic-bezier(.4,.1,.2,1);
-    z-index:120;
+    z-index:100;
   }
 
   body.menu-open .mobile-menu{
-    right:0;
+    transform:translateX(0);
   }
 
   .mobile-menu a{
     display:block;
-    padding:18px 6px;
-    font-size:19px;
+    padding:14px 6px;
+    font-size:20px;
     color:#111;
     text-decoration:none;
     border-bottom:1px solid #eee;
@@ -229,20 +264,7 @@ body.dark .hero-description{color:#ccc}
     border-bottom:none;
   }
 
-  /* 背景遮罩 */
-  .menu-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.25);
-    backdrop-filter:blur(2px);
-    z-index:110;
-    opacity:0;
-    pointer-events:none;
-    transition:.35s;
-  }
-
-  body.menu-open .menu-overlay{
-    opacity:1;
-    pointer-events:auto;
+  body.menu-open{
+    overflow:hidden;
   }
 }
