@@ -35,7 +35,7 @@ const App = () => {
             points: [
               "<strong>市场开拓与内容感知：</strong>负责英、日、意三国市场与竞品调研，主导新市场选品测试与 SKU 组合优化；利用 AI 工具辅助生成契合本地文化的主图与短视频素材，显著提高店铺内容的吸引力与本土化程度。",
               "<strong>利润测算与定价策略：</strong>独立统筹三国店铺日常运营(月均 GMV 约 <strong>6 万美元</strong>)。针对不同国家运费、平台费率和税率，独立使用 Excel 搭建利润测算表，制定动态定价体系，确保各市场利润率稳定在 <strong>23%-41%</strong> 之间。",
-              "<strong>数据复盘与转化优化：</strong>定期追踪日常活动数据，深度拆解转化漏斗。根据数据反馈和内容趋势，优化商品展示和直播间引导流程，推动直播间进房率提升 <strong>3%</strong>、商品转化率提升 <strong>2.37%</strong>。"
+              "<strong>数据复盘与转化优化：</strong>定期追踪日常活动数据，深度拆解转化漏斗。根据数据反馈和内容趋势，优化商品展示和直播间引导流程，推动直播间进房率提升 <strong>3%</strong>、商品转化率提升 2.37%。"
             ]
           },
           {
@@ -45,7 +45,7 @@ const App = () => {
             points: [
               "<strong>KA对接与策略制定：</strong>深度参与华为、Realme、Ulike、Dreame、深蓝、米可世界等头部 KA 客户的营销项目；期间独立操盘“Sacelady”品牌出海项目并推进落地，为其量身定制完整的 KOL 营销策略与视频创意方向。",
               "<strong>流程搭建与跨部门协同：</strong>作为项目对接中枢，高频沟通媒介 BD、内容、商务等内部团队及外部 13 家机构。将整体需求拆解为具体执行任务，并建立<strong>标准化 SOP</strong>，大幅提升跨部门协作的流转效率。",
-              "<strong>达人统筹与项目执行：</strong>并行管理 <strong>11+</strong> 个商业化项目，单项目峰值统筹 <strong>30+</strong> 位海外 KOL，项目总金额超 <strong>20 万美元</strong>。严控质量，实现成片通过率 <strong>100%</strong>、准时交付率 <strong>98%</strong>。",
+              "<strong>达人统筹与项目执行：</strong>并行管理 <strong>11+</strong> 个商业化项目，单项目峰值统筹 <strong>30+</strong> 位海外 KOL，项目总金额超 <strong>20 万美元</strong>。严控质量，实现成片通过率 100%、准时交付率 98%。",
               "<strong>风险控制与项目复盘：</strong>制定严格的 Timeline 和风险预案，合理管理客户预期。面对突发问题迅速响应；项目完成后独立撰写深度复盘报告并提出后续优化建议。"
             ]
           }
@@ -68,7 +68,7 @@ const App = () => {
       project: {
         title: "项目案例",
         name: "Sacelady 品牌出海营销简案",
-        desc: "深度参与并独立操盘的美妆品牌海外推广方案。结合对 TikTok 生态的深刻理解，为其量身定制了完整的 KOL 营销策略与视频创意方向，展现了扎实的整合营销思维与本地化执行能力。"
+        desc: "深度参与并独立操盘的美妆品牌海外推广方案。结合对 TikTok 生态的深刻理解，为其量身定制了完整的 KOL 营销策略与视频创意方向,推动Secalady的海外业务增长。"
       },
       contact: { title: "Get in touch.", sub: "期待与您探讨关于数字营销与数字化提效的无限可能。" }
     },
@@ -99,8 +99,8 @@ const App = () => {
             time: "2025.12 - 2026.02",
             points: [
               "<strong>Market Expansion:</strong> Conducted market research for UK, JP, IT markets; led SKU optimization. Used AI to generate localized content, significantly increasing cultural relevance.",
-              "<strong>Pricing Strategy:</strong> Managed daily operations across 3 countries (Avg GMV <strong>~$60,000</strong>). Built Excel profit models considering varying logistics and taxes, stabilizing margins at <strong>23%-41%</strong>.",
-              "<strong>Data & Optimization:</strong> Tracked funnel metrics regularly. Optimized display and live-stream logic, boosting room entry rate by <strong>3%</strong> and CVR by <strong>2.37%</strong>."
+              "<strong>Pricing Strategy:</strong> Managed daily operations across 3 countries (Avg GMV <strong>~$60,000</strong>). Built Excel profit models considering varying logistics and taxes, stabilizing margins at 23%-41%.",
+              "<strong>Data & Optimization:</strong> Tracked funnel metrics regularly. Optimized display and live-stream logic, boosting room entry rate by 3% and CVR by 2.37%."
             ]
           },
           {
@@ -109,8 +109,8 @@ const App = () => {
             time: "2025.05 - 2025.12",
             points: [
               "<strong>KA Strategy:</strong> Deeply involved in campaigns for KA clients like Huawei and Realme. Independently led the 'Sacelady' global project, creating comprehensive KOL strategies.",
-              "<strong>Process & Coordination:</strong> Acted as the central hub communicating with BD, Content, and 13 external agencies. Established <strong>standardized SOPs</strong> to vastly improve workflow efficiency.",
-              "<strong>Execution:</strong> Managed <strong>11+</strong> concurrent projects, coordinating up to <strong>30+</strong> KOLs per project with budgets exceeding <strong>$200,000</strong>. Achieved <strong>100%</strong> content approval and <strong>98%</strong> on-time delivery.",
+              "<strong>Process & Coordination:</strong> Acted as the central hub communicating with BD, Content, and 13 external agencies. Established standardized SOPs to vastly improve workflow efficiency.",
+              "<strong>Execution:</strong> Managed 11+ concurrent projects, coordinating up to 30+ KOLs per project with budgets exceeding $200,000. Achieved 100% content approval and 98% on-time delivery.",
               "<strong>Risk Control:</strong> Managed strict timelines and client expectations. Handled emergencies swiftly and authored in-depth post-project review reports."
             ]
           }
@@ -124,8 +124,8 @@ const App = () => {
             role: "Project Lead / Management",
             time: "2024.06 - 2025.06",
             points: [
-              "<strong>Market Research:</strong> Surveyed 31 mid-tier companies to pinpoint product positioning. Authored a <strong>20,000+ word BP</strong> and high-spec roadshow PPT to visualize complex models.",
-              "<strong>Business Development:</strong> Engaged in high-frequency B2B negotiations, securing strategic partnerships with <strong>50+ companies</strong> in the supply chain."
+              "<strong>Market Research:</strong> Surveyed 31 mid-tier companies to pinpoint product positioning. Authored a 20,000+ word BP and high-spec roadshow PPT to visualize complex models.",
+              "<strong>Business Development:</strong> Engaged in high-frequency B2B negotiations, securing strategic partnerships with 50+ companies in the supply chain."
             ]
           }
         ]
@@ -180,25 +180,31 @@ const App = () => {
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-16">
         
         {/* --- Hero Section --- */}
-        <section className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          <img 
-            src="/8fa5b1f7a5356b645863ae41008f2f3e.jpg" 
-            alt="Alen Liu Avatar" 
-            className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover mb-6 shadow-sm border border-black/5 dark:border-white/10"
-          />
-          {/* 在这里强制暗色模式下为纯白 dark:text-white */}
-          <h1 className="text-[32px] md:text-[40px] font-bold tracking-tight mb-3 text-[#111111] dark:text-white">
-            {content.hero.name}
-          </h1>
-          <p className={`text-[15px] md:text-[17px] font-medium mb-6 tracking-tight ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
-            {content.hero.role}
-          </p>
-          <p className={`text-[14px] md:text-[15px] leading-relaxed mb-8 max-w-2xl ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
-            {content.hero.intro}
-          </p>
-          <a href="mailto:alenliew0@gmail.com" className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all text-[13px] shadow-sm ${isDark ? 'bg-[#f5f5f7] text-black hover:bg-white hover:scale-105' : 'bg-[#1d1d1f] text-white hover:bg-[#424245] hover:scale-105'}`}>
-            {content.hero.cta}
-          </a>
+        <section className="animate-in fade-in slide-in-from-bottom-4 duration-1000 flex flex-col-reverse md:flex-row items-start justify-between gap-8 mb-12">
+          
+          <div className="flex-1">
+            <h1 className="text-[32px] md:text-[40px] font-bold tracking-tight mb-3 text-[#111111] dark:text-white leading-tight">
+              {content.hero.name}
+            </h1>
+            <p className={`text-[15px] md:text-[17px] font-medium mb-6 tracking-tight ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
+              {content.hero.role}
+            </p>
+            <p className={`text-[14px] md:text-[15px] leading-relaxed mb-8 max-w-xl ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+              {content.hero.intro}
+            </p>
+            <a href="mailto:alenliew0@gmail.com" className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all text-[13px] shadow-sm ${isDark ? 'bg-[#f5f5f7] text-black hover:bg-white hover:scale-105' : 'bg-[#1d1d1f] text-white hover:bg-[#424245] hover:scale-105'}`}>
+              {content.hero.cta}
+            </a>
+          </div>
+
+          <div className="shrink-0 md:mt-2">
+            <img 
+              src="/8fa5b1f7a5356b645863ae41008f2f3e.jpg" 
+              alt="Alen Liu Avatar" 
+              className="w-24 md:w-28 rounded-2xl shadow-sm border border-black/5 dark:border-white/10"
+            />
+          </div>
+
         </section>
 
         <hr className="border-none h-[1px] bg-black/[0.06] dark:bg-white/10 my-10 w-full" />
@@ -336,7 +342,7 @@ const App = () => {
             </div>
           </div>
           <p className="mt-16 text-[12px] opacity-40 font-mono text-center md:text-left">
-            © 2026 AlenLiew·Resume
+            © 2026 AlenLiew·Resume.
           </p>
         </section>
       </main>
