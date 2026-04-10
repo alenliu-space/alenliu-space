@@ -11,8 +11,8 @@ const App = () => {
       nav: { about: "优势", intern: "实习", practice: "实践", project: "案例" },
       hero: { 
         name: "Alen Liu (廖坚鑫)", 
-        role: "品牌出海&数字营销", 
-        intro: "工商管理背景，专注于海外业务与数字营销。擅长利用AI工具实现数字化提效，在TikTok Shop运营与海外KOL营销领域拥有实战经验。具备优秀的高压多线程推进能力，高效统筹11+个并发商业项目并实现高质量交付。",
+        role: "海外业务与数字营销实践者", 
+        intro: "工商管理背景，专注于海外业务与数字营销。擅长利用 AI 工具实现数字化提效，在 TikTok Shop 运营与海外 KOL 营销领域拥有实战经验。具备优秀的高压多线程推进能力，曾高效统筹 11+ 个并发商业项目并实现高质量交付。",
         cta: "联系我 📧" 
       },
       about: {
@@ -179,14 +179,15 @@ const App = () => {
 
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-16">
         
-        {/* --- Hero Section (参考图 image_526f41.png 样式) --- */}
+        {/* --- Hero Section --- */}
         <section className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <img 
-            src="https://gallery.alenliu.space/life/e5b414de3aae85862ef9f1ec9b508123.jpg" 
+            src="/8fa5b1f7a5356b645863ae41008f2f3e.jpg" 
             alt="Alen Liu Avatar" 
             className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover mb-6 shadow-sm border border-black/5 dark:border-white/10"
           />
-          <h1 className="text-[32px] md:text-[40px] font-bold tracking-tight mb-3 text-[#111111] dark:text-[#f5f5f7]">
+          {/* 在这里强制暗色模式下为纯白 dark:text-white */}
+          <h1 className="text-[32px] md:text-[40px] font-bold tracking-tight mb-3 text-[#111111] dark:text-white">
             {content.hero.name}
           </h1>
           <p className={`text-[15px] md:text-[17px] font-medium mb-6 tracking-tight ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
@@ -200,7 +201,6 @@ const App = () => {
           </a>
         </section>
 
-        {/* 分割线 (缩小间距以紧凑结构) */}
         <hr className="border-none h-[1px] bg-black/[0.06] dark:bg-white/10 my-10 w-full" />
 
         {/* --- About Me --- */}
@@ -220,7 +220,6 @@ const App = () => {
             ))}
           </div>
           
-          {/* Tags (参考图 image_526b20.png 样式) */}
           <div className="mt-10 flex flex-wrap gap-2.5">
             {content.about.tags.map(tag => (
               <span 
@@ -310,11 +309,11 @@ const App = () => {
                   {content.project.desc}
                 </p>
               </div>
-              <div className="h-full min-h-[240px] overflow-hidden">
+              <div className="h-full min-h-[240px] overflow-hidden bg-gray-50 dark:bg-black/20 flex items-center justify-center">
                 <img 
-                  src="/sacelady.jpg" 
+                  src="/77a5c397ab3af6b4ee0173b980f614af.png" 
                   alt="Sacelady Project Brief"
-                  className="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
               </div>
             </div>
