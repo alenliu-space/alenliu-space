@@ -1,16 +1,66 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Github, Linkedin, Sun, Moon, Globe } from 'lucide-react';
+import { Github, Linkedin, Sun, Moon, Globe, BookOpen, Image, Smartphone, Instagram } from 'lucide-react';
+
+// --- 自定义 TikTok/抖音 SVG 图标组件 ---
+const TikTokIcon = ({ size = 20, className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 const App = () => {
   const [lang, setLang] = useState('zh');
   const [isDark, setIsDark] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+
+  // --- 滚动侦测 (ScrollSpy) 逻辑 ---
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['about', 'internship', 'practice', 'projects'];
+      let current = '';
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 200 && rect.bottom >= 200) {
+            current = section;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // --- 主题切换逻辑 ---
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDark]);
 
   // --- 国际化文案包 ---
   const t = {
     zh: {
-      nav: { about: "优势", intern: "实习", practice: "实践", project: "案例" },
+      toc: { about: "核心优势", intern: "实习经历", practice: "校园项目", project: "项目案例" },
       hero: { 
-        name: "Alen Liu (廖坚鑫)", 
+        name: "廖坚鑫 (AlenLiew)", 
         role: "海外业务与数字营销实践者", 
         intro: "工商管理背景，专注于数字营销与海外业务。擅长利用 AI 工具实现数字化提效，在 TikTok Shop 运营与海外 KOL 营销领域拥有实战经验。具备优秀的高压多线程推进能力，曾高效统筹 11+ 个并发商业项目并实现高质量交付。",
         cta: "联系我 📧" 
@@ -23,7 +73,7 @@ const App = () => {
           { title: "数据分析与业务洞察", desc: "具备敏锐的数据嗅觉与结构化拆解能力。能熟练使用 Excel 搭建利润测算模型，并对业务转化漏斗(进房率、点击率、转化率)进行<strong>周期性追踪与拆解</strong>；擅长从数据中发现问题，并输出切实可行的商业优化建议。" },
           { title: "项目统筹与跨部门协同", desc: "具备优秀的高压多线程推进与交付能力(最高并发管理 <strong>11+</strong> 项目)。擅长将复杂的客户需求拆解为清晰的执行步骤并制定<strong>标准化 SOP</strong>；能高效串联内外团队，严控进度与质量，确保目标按时交付。" }
         ],
-        tags: ["TikTok Shop", "KOL Marketing", "AI Agent Workflow", "Data Analysis", "AI Coding"]
+        tags: ["TikTok Shop", "KOL Marketing", "Data Analysis", "AI Agent Workflow", "AI Coding"]
       },
       internship: {
         title: "实习经历",
@@ -35,7 +85,7 @@ const App = () => {
             points: [
               "<strong>市场开拓与内容感知：</strong>负责英、日、意三国市场与竞品调研，主导新市场选品测试与 SKU 组合优化；利用 AI 工具辅助生成契合本地文化的主图与短视频素材，显著提高店铺内容的吸引力与本土化程度。",
               "<strong>利润测算与定价策略：</strong>独立统筹三国店铺日常运营(月均 GMV 约 <strong>6 万美元</strong>)。针对不同国家运费、平台费率和税率，独立使用 Excel 搭建利润测算表，制定动态定价体系，确保各市场利润率稳定在 <strong>23%-41%</strong> 之间。",
-              "<strong>数据复盘与转化优化：</strong>定期追踪日常活动数据，深度拆解转化漏斗。根据数据反馈和内容趋势，优化商品展示和直播间引导流程，推动直播间进房率提升 <strong>3%</strong>、商品转化率提升 2.37%。"
+              "<strong>数据复盘与转化优化：</strong>定期追踪日常活动数据，深度拆解转化漏斗。根据数据反馈和内容趋势，优化商品展示和直播间引导流程，推动直播间进房率提升 <strong>3%</strong>、商品转化率提升 <strong>2.37%</strong>。"
             ]
           },
           {
@@ -45,7 +95,7 @@ const App = () => {
             points: [
               "<strong>KA对接与策略制定：</strong>深度参与华为、Realme、Ulike、Dreame、深蓝、米可世界等头部 KA 客户的营销项目；期间独立操盘“Sacelady”品牌出海项目并推进落地，为其量身定制完整的 KOL 营销策略与视频创意方向。",
               "<strong>流程搭建与跨部门协同：</strong>作为项目对接中枢，高频沟通媒介 BD、内容、商务等内部团队及外部 13 家机构。将整体需求拆解为具体执行任务，并建立<strong>标准化 SOP</strong>，大幅提升跨部门协作的流转效率。",
-              "<strong>达人统筹与项目执行：</strong>并行管理 <strong>11+</strong> 个商业化项目，单项目峰值统筹 <strong>30+</strong> 位海外 KOL，项目总金额超 <strong>20 万美元</strong>。严控质量，实现成片通过率 100%、准时交付率 98%。",
+              "<strong>达人统筹与项目执行：</strong>并行管理 <strong>11+</strong> 个商业化项目，单项目峰值统筹 <strong>30+</strong> 位海外 KOL，项目总金额超 <strong>20 万美元</strong>。严控质量，实现成片通过率 <strong>100%</strong>、准时交付率 <strong>98%</strong>。",
               "<strong>风险控制与项目复盘：</strong>制定严格的 Timeline 和风险预案，合理管理客户预期。面对突发问题迅速响应；项目完成后独立撰写深度复盘报告并提出后续优化建议。"
             ]
           }
@@ -70,12 +120,12 @@ const App = () => {
         name: "Sacelady 品牌出海营销简案",
         desc: "深度参与并独立操盘的美妆品牌海外推广方案。结合对 TikTok 生态的深刻理解，为其量身定制了完整的 KOL 营销策略与视频创意方向,推动Secalady的海外业务增长。"
       },
-      contact: { title: "Get in touch.", sub: "期待与您探讨关于数字营销与数字化提效的无限可能。" }
+      contact: { title: "👋🏻Get in touch.", sub: "期待与您探讨关于数字营销与数字化提效的无限可能。" }
     },
     en: {
-      nav: { about: "Strengths", intern: "Internships", practice: "Practice", project: "Case" },
+      toc: { about: "Strengths", intern: "Internships", practice: "Campus", project: "Projects" },
       hero: { 
-        name: "Alen Liu (Jianxin Liao)", 
+        name: "AlenLiew (Jianxin Liao)", 
         role: "Overseas Business & Digital Marketing Specialist", 
         intro: "Business Administration background, focusing on overseas business and digital marketing. Adept at leveraging AI tools for digital efficiency, with practical experience in TikTok Shop operations and overseas KOL marketing. Excellent high-pressure, multi-threaded execution capability, successfully managing 11+ concurrent commercial projects with high-quality delivery.",
         cta: "Contact Me 📧" 
@@ -88,7 +138,7 @@ const App = () => {
           { title: "Data Analysis & Business Insight", desc: "Strong analytical skills. Proficient in Excel for profit models and tracking conversion funnels (CTR, CVR). Adept at <strong>discovering issues through data</strong> and providing actionable optimization advice." },
           { title: "Project Coordination", desc: "Excellent capability in high-pressure, multi-threaded project management (up to <strong>11+ concurrent projects</strong>). Skilled in breaking down complex needs into <strong>standardized SOPs</strong> to ensure timely delivery." }
         ],
-        tags: ["TikTok Shop", "KOL Marketing", "AI Agent Workflow", "Data Analysis", "AI Coding"]
+        tags: ["TikTok Shop", "KOL Marketing", "Data Analysis", "AI Agent Workflow", "AI Coding"]
       },
       internship: {
         title: "Internships",
@@ -99,18 +149,18 @@ const App = () => {
             time: "2025.12 - 2026.02",
             points: [
               "<strong>Market Expansion:</strong> Conducted market research for UK, JP, IT markets; led SKU optimization. Used AI to generate localized content, significantly increasing cultural relevance.",
-              "<strong>Pricing Strategy:</strong> Managed daily operations across 3 countries (Avg GMV <strong>~$60,000</strong>). Built Excel profit models considering varying logistics and taxes, stabilizing margins at 23%-41%.",
-              "<strong>Data & Optimization:</strong> Tracked funnel metrics regularly. Optimized display and live-stream logic, boosting room entry rate by 3% and CVR by 2.37%."
+              "<strong>Pricing Strategy:</strong> Managed daily operations across 3 countries (Avg GMV <strong>~$60,000</strong>). Built Excel profit models considering varying logistics and taxes, stabilizing margins at <strong>23%-41%</strong>.",
+              "<strong>Data & Optimization:</strong> Tracked funnel metrics regularly. Optimized display and live-stream logic, boosting room entry rate by <strong>3%</strong> and CVR by <strong>2.37%</strong>."
             ]
           },
           {
-            company: "Guangzhou Huahemu Media",
+            company: "BWM (Guangzhou) Media",
             role: "Account Executive & Overseas KOL Intern",
             time: "2025.05 - 2025.12",
             points: [
               "<strong>KA Strategy:</strong> Deeply involved in campaigns for KA clients like Huawei and Realme. Independently led the 'Sacelady' global project, creating comprehensive KOL strategies.",
-              "<strong>Process & Coordination:</strong> Acted as the central hub communicating with BD, Content, and 13 external agencies. Established standardized SOPs to vastly improve workflow efficiency.",
-              "<strong>Execution:</strong> Managed 11+ concurrent projects, coordinating up to 30+ KOLs per project with budgets exceeding $200,000. Achieved 100% content approval and 98% on-time delivery.",
+              "<strong>Process & Coordination:</strong> Acted as the central hub communicating with BD, Content, and 13 external agencies. Established <strong>standardized SOPs</strong> to vastly improve workflow efficiency.",
+              "<strong>Execution:</strong> Managed <strong>11+</strong> concurrent projects, coordinating up to <strong>30+</strong> KOLs per project with budgets exceeding <strong>$200,000</strong>. Achieved <strong>100%</strong> content approval and <strong>98%</strong> on-time delivery.",
               "<strong>Risk Control:</strong> Managed strict timelines and client expectations. Handled emergencies swiftly and authored in-depth post-project review reports."
             ]
           }
@@ -133,36 +183,66 @@ const App = () => {
       project: {
         title: "Featured Case",
         name: "Sacelady Global Marketing Brief",
-        desc: "A comprehensive marketing strategy tailored for the beauty brand Sacelady. Built upon a deep understanding of the TikTok ecosystem, it details a complete KOL strategy and creative direction, demonstrating solid integrated marketing and localized execution capabilities."
+        desc: "In-depth participation and independent management of overseas promotion plans for beauty brands. Combined with a deep understanding of the TikTok ecosystem, a complete KOL marketing strategy and video creative direction have been customized to promote Secalady's overseas business growth."
       },
-      contact: { title: "Get in touch.", sub: "Let's explore the infinite possibilities of digital marketing and AI empowerment together." }
+      contact: { title: "👋🏻Get in touch.", sub: "Let's explore the infinite possibilities of digital marketing and AI empowerment together." }
     }
   };
 
   const content = t[lang];
 
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDark]);
-
   return (
     <div className={`min-h-screen transition-colors duration-500 selection:bg-neutral-200 dark:selection:bg-neutral-800 ${isDark ? 'bg-[#000000] text-[#f5f5f7]' : 'bg-[#ffffff] text-[#1d1d1f]'} font-sans antialiased`}>
       
+      {/* --- 右侧悬浮目录 (💡 修复1：增加呼吸感，left 值改为 calc(50% + 460px) 往右推) --- */}
+      <aside className="hidden xl:flex flex-col items-start fixed left-[calc(50%+460px)] top-[220px] z-40">
+        <div className="flex flex-col gap-4">
+          {[
+            { id: 'about', label: content.toc.about },
+            { id: 'internship', label: content.toc.intern },
+            { id: 'practice', label: content.toc.practice },
+            { id: 'projects', label: content.toc.project },
+          ].map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`text-[14px] font-medium transition-all duration-300 flex items-center gap-3 ${
+                activeSection === item.id 
+                  ? (isDark ? 'text-white' : 'text-black') 
+                  : (isDark ? 'text-neutral-500 hover:text-neutral-300' : 'text-neutral-400 hover:text-neutral-800')
+              }`}
+            >
+              {/* Apple 风格极简指示器 */}
+              <span className={`w-0.5 h-4 transition-all duration-300 ${
+                activeSection === item.id 
+                  ? (isDark ? 'bg-white' : 'bg-black') 
+                  : 'bg-transparent'
+              }`} />
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </aside>
+
       {/* --- Navigation --- */}
       <nav className={`fixed top-0 w-full z-50 border-b ${isDark ? 'bg-black/70 border-white/10' : 'bg-white/80 border-black/5'} backdrop-blur-xl saturate-150`}>
         <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
           <span className="font-semibold tracking-tight text-[15px]">Alen · Resume</span>
           
           <div className="flex items-center gap-6">
-            <div className="hidden md:flex gap-7 text-[13px] font-medium opacity-70">
-              <a href="#about" className="hover:opacity-100 transition-opacity">{content.nav.about}</a>
-              <a href="#internship" className="hover:opacity-100 transition-opacity">{content.nav.intern}</a>
-              <a href="#practice" className="hover:opacity-100 transition-opacity">{content.nav.practice}</a>
-              <a href="#projects" className="hover:opacity-100 transition-opacity">{content.nav.project}</a>
+            <div className="hidden md:flex gap-6 text-[13px] font-medium opacity-70">
+              <a href="https://blog.alenliu.space" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:opacity-100 transition-opacity">
+                <BookOpen size={14} /> Blog
+              </a>
+              <a href="https://gallery.alenliu.space" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:opacity-100 transition-opacity">
+                <Image size={14} /> Gallery
+              </a>
+              <a href="https://www.linkedin.com/in/%E5%9D%9A%E9%91%AB-%E5%BB%96-965299398" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:opacity-100 transition-opacity">
+                <Linkedin size={14} /> LinkedIn
+              </a>
+              <a href="https://github.com/alenliu-space" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:opacity-100 transition-opacity">
+                <Github size={14} /> GitHub
+              </a>
             </div>
             
             <div className="flex items-center gap-2 border-l pl-5 border-gray-300 dark:border-white/20">
@@ -181,9 +261,9 @@ const App = () => {
         
         {/* --- Hero Section --- */}
         <section className="animate-in fade-in slide-in-from-bottom-4 duration-1000 flex flex-col-reverse md:flex-row items-start justify-between gap-8 mb-12">
-          
           <div className="flex-1">
-            <h1 className="text-[32px] md:text-[40px] font-bold tracking-tight mb-3 text-[#111111] dark:text-white leading-tight">
+            {/* 💡 修复2：强制覆盖暗色模式文字颜色，确保完美呈现白色 */}
+            <h1 className="text-[32px] md:text-[40px] font-bold tracking-tight mb-3 text-[#111111] dark:text-[#f5f5f7] leading-tight">
               {content.hero.name}
             </h1>
             <p className={`text-[15px] md:text-[17px] font-medium mb-6 tracking-tight ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
@@ -197,14 +277,13 @@ const App = () => {
             </a>
           </div>
 
-          <div className="shrink-0 md:mt-2">
+          <div className="shrink-0 md:mt-2 relative">
             <img 
               src="/8fa5b1f7a5356b645863ae41008f2f3e.jpg" 
               alt="Alen Liu Avatar" 
               className="w-24 md:w-28 rounded-2xl shadow-sm border border-black/5 dark:border-white/10"
             />
           </div>
-
         </section>
 
         <hr className="border-none h-[1px] bg-black/[0.06] dark:bg-white/10 my-10 w-full" />
@@ -214,7 +293,7 @@ const App = () => {
           <h2 className="text-[24px] font-bold mb-8 tracking-tight">
             {content.about.title}
           </h2>
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10 items-start">
             {content.about.items.map((item, i) => (
               <div key={i} className="pt-2">
                 <h3 className="text-[16px] font-semibold mb-2">{item.title}</h3>
@@ -335,14 +414,21 @@ const App = () => {
                 {content.contact.sub}
               </p>
             </div>
+            
             <div className="flex gap-3">
-              <a href="mailto:alenliew0@gmail.com" className={`p-3 rounded-full transition-all hover:scale-105 ${isDark ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-[#f0f0f0] hover:bg-[#e4e4e4] text-black'}`}><Mail size={18} /></a>
-              <a href="https://github.com/alenliu-space" target="_blank" className={`p-3 rounded-full transition-all hover:scale-105 ${isDark ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-[#f0f0f0] hover:bg-[#e4e4e4] text-black'}`}><Github size={18} /></a>
-              <a href="https://www.linkedin.com/in/%E5%9D%9A%E9%91%AB-%E5%BB%96-965203303/" target="_blank" className={`p-3 rounded-full transition-all hover:scale-105 ${isDark ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-[#f0f0f0] hover:bg-[#e4e4e4] text-black'}`}><Linkedin size={18} /></a>
+              <a href="https://wa.me/8613790839902" target="_blank" rel="noreferrer" className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-medium transition-all hover:scale-105 ${isDark ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-[#f0f0f0] hover:bg-[#e4e4e4] text-black'}`}>
+                <Smartphone size={16} /> +86 13790839902
+              </a>
+              <a href="https://www.douyin.com/user/MS4wLjABAAAAJGm5szbdxYctKnpdDZftPS3rZMdsCTwHeA-3gdfsnXBCKkVcPPdAqLCXSlYHg2jT" target="_blank" rel="noreferrer" className={`p-2.5 rounded-full flex items-center justify-center transition-all hover:scale-105 ${isDark ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-[#f0f0f0] hover:bg-[#e4e4e4] text-black'}`}>
+                <TikTokIcon size={18} />
+              </a>
+              <a href="https://www.instagram.com/alenliu00/" target="_blank" rel="noreferrer" className={`p-2.5 rounded-full flex items-center justify-center transition-all hover:scale-105 ${isDark ? 'bg-white/10 hover:bg-white/20 text-white' : 'bg-[#f0f0f0] hover:bg-[#e4e4e4] text-black'}`}>
+                <Instagram size={18} />
+              </a>
             </div>
           </div>
           <p className="mt-16 text-[12px] opacity-40 font-mono text-center md:text-left">
-            © 2026 AlenLiew·Resume.
+            © 2026 AlenLiew·Resume
           </p>
         </section>
       </main>
