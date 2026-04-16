@@ -231,7 +231,7 @@ const App = () => {
           
           <div className="flex items-center gap-6">
             <div className="hidden md:flex gap-6 text-[13px] font-medium opacity-70">
-              <a href="https://blog.alenliu.space" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:opacity-100 transition-opacity">
+              <a href="https://essay.alenliu.space" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:opacity-100 transition-opacity">
                 <BookOpen size={14} /> Blog
               </a>
               <a href="https://gallery.alenliu.space" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:opacity-100 transition-opacity">
