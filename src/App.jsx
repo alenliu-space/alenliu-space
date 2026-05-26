@@ -430,6 +430,14 @@ const App = () => {
           <p className="mt-16 text-[12px] opacity-40 font-mono text-center md:text-left">
             © 2026 AlenLiew·Resume
           </p>
+          <a 
+              href="https://beian.miit.gov.cn" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-[12px] opacity-40 font-mono hover:opacity-100 hover:text-black dark:hover:text-white transition-all duration-300 inline-block w-fit"
+            >
+              粤ICP备2024206799号
+            </a>
         </section>
       </main>
     </div>
